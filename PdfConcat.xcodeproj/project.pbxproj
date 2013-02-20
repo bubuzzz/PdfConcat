@@ -28,6 +28,10 @@
 		684F421616C4E35200D05057 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 684F421516C4E35200D05057 /* main.c */; };
 		684F421816C4E35200D05057 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 684F421716C4E35200D05057 /* GetMetadataForFile.m */; };
 		684F421B16C4E35200D05057 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 684F421A16C4E35200D05057 /* MySpotlightImporter.m */; };
+		684F422F16C4E8C800D05057 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684F422E16C4E8C800D05057 /* AppController.m */; };
+		684F423316C4EA9E00D05057 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 684F423216C4EA9E00D05057 /* CommonUtils.m */; };
+		684F423616C4EFC600D05057 /* FileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 684F423516C4EFC600D05057 /* FileModel.m */; };
+		6853581E16C88A0D009CB335 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6853581D16C88A0D009CB335 /* Quartz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,13 @@
 		684F421A16C4E35200D05057 /* MySpotlightImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySpotlightImporter.m; sourceTree = "<group>"; };
 		684F421C16C4E35200D05057 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
 		684F421D16C4E35200D05057 /* PdfConcatImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PdfConcatImporter-Prefix.pch"; sourceTree = "<group>"; };
+		684F422D16C4E8C800D05057 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		684F422E16C4E8C800D05057 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		684F423116C4EA9E00D05057 /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		684F423216C4EA9E00D05057 /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
+		684F423416C4EFC600D05057 /* FileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileModel.h; sourceTree = "<group>"; };
+		684F423516C4EFC600D05057 /* FileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileModel.m; sourceTree = "<group>"; };
+		6853581D16C88A0D009CB335 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6853581E16C88A0D009CB335 /* Quartz.framework in Frameworks */,
 				684F41CE16C4E35100D05057 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +152,7 @@
 		684F41CC16C4E35100D05057 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6853581D16C88A0D009CB335 /* Quartz.framework */,
 				684F41CD16C4E35100D05057 /* Cocoa.framework */,
 				684F41F116C4E35200D05057 /* SenTestingKit.framework */,
 				684F420716C4E35200D05057 /* CoreServices.framework */,
@@ -164,11 +177,11 @@
 		684F41D316C4E35100D05057 /* PdfConcat */ = {
 			isa = PBXGroup;
 			children = (
-				684F41DF16C4E35100D05057 /* Document.h */,
-				684F41E016C4E35100D05057 /* Document.m */,
-				684F41E216C4E35100D05057 /* Document.xib */,
-				684F41E516C4E35100D05057 /* MainMenu.xib */,
-				684F41E816C4E35100D05057 /* Document.xcdatamodeld */,
+				684F423016C4EA9000D05057 /* Utils */,
+				684F422C16C4E4B700D05057 /* Models */,
+				684F422B16C4E4B200D05057 /* Views */,
+				684F422A16C4E4AC00D05057 /* Controllers */,
+				684F422916C4E36800D05057 /* GUI */,
 				684F41D416C4E35100D05057 /* Supporting Files */,
 			);
 			path = PdfConcat;
@@ -226,6 +239,52 @@
 				684F421D16C4E35200D05057 /* PdfConcatImporter-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		684F422916C4E36800D05057 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				684F41DF16C4E35100D05057 /* Document.h */,
+				684F41E016C4E35100D05057 /* Document.m */,
+				684F41E216C4E35100D05057 /* Document.xib */,
+				684F41E516C4E35100D05057 /* MainMenu.xib */,
+				684F41E816C4E35100D05057 /* Document.xcdatamodeld */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		684F422A16C4E4AC00D05057 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				684F422D16C4E8C800D05057 /* AppController.h */,
+				684F422E16C4E8C800D05057 /* AppController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		684F422B16C4E4B200D05057 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		684F422C16C4E4B700D05057 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				684F423416C4EFC600D05057 /* FileModel.h */,
+				684F423516C4EFC600D05057 /* FileModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		684F423016C4EA9000D05057 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				684F423116C4EA9E00D05057 /* CommonUtils.h */,
+				684F423216C4EA9E00D05057 /* CommonUtils.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +427,9 @@
 				684F41DA16C4E35100D05057 /* main.m in Sources */,
 				684F41E116C4E35100D05057 /* Document.m in Sources */,
 				684F41EA16C4E35100D05057 /* Document.xcdatamodeld in Sources */,
+				684F422F16C4E8C800D05057 /* AppController.m in Sources */,
+				684F423316C4EA9E00D05057 /* CommonUtils.m in Sources */,
+				684F423616C4EFC600D05057 /* FileModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +682,7 @@
 				684F422216C4E35200D05057 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		684F422316C4E35200D05057 /* Build configuration list for PBXNativeTarget "PdfConcat" */ = {
 			isa = XCConfigurationList;
@@ -628,6 +691,7 @@
 				684F422516C4E35200D05057 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		684F422616C4E35200D05057 /* Build configuration list for PBXNativeTarget "PdfConcatTests" */ = {
 			isa = XCConfigurationList;
@@ -636,6 +700,7 @@
 				684F422816C4E35200D05057 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
